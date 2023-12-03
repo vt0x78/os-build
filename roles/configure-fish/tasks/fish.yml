@@ -1,0 +1,17 @@
+---
+- name: "Install Fish"
+  apt:
+    name: fish
+    state: present
+  become: true
+  become_method: sudo
+- name: "Copying Fish Config Files"
+  synchronize:
+    src: "{{ playbook_dir }}/roles/configure-fish/files/"
+    dest: "{{ ansible_env.HOME }}/.config/fish/"
+- name: "Copying Fish Config to Root Directory"
+  synchronize:
+    src: "{{ playbook_dir }}/roles/configure-fish/files/"
+    dest: "/root/.config/fish/"
+  become: true
+  become_method: sudo

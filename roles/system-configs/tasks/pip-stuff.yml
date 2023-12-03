@@ -1,0 +1,7 @@
+---
+- name: "Installing PIP3 stuff"
+  pip:
+    name:
+        - ninja
+        - meson
+    executable: pip3

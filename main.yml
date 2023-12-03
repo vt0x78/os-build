@@ -1,0 +1,21 @@
+---
+- name: "Customizing OS"
+  hosts: localhost
+  connection: local
+  roles:
+    - role: "roles/system-configs"
+    - role: gantsign.visual-studio-code
+    - role: "roles/configure-fish"
+    - role: "roles/kali-clean"
+    - role: "roles/firefox-custom"
+    - role: "roles/logging-ufw"
+    - role: "roles/tools"
+      users:
+        - username: "{{ ansible_user_id }}"
+          visual_studio_code_extensions:
+            - streetsidesoftware.code-spell-checker
+            - bmewburn.vscode-intelephense-client
+            - ms-python.python
+            - GitHub.copilot
+            - ms-python.vscode-pylance
+

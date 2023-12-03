@@ -1,0 +1,6 @@
+---
+- name: "Plugins Firefox"
+  template:
+    src: "{{ playbook_dir }}/roles/firefox-custom/templates/policies.json.j2"
+    dest: "/usr/share/firefox-esr/distribution/policies.json"
+  become: true

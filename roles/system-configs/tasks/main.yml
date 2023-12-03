@@ -1,0 +1,4 @@
+---
+- include_tasks: apt-stuff.yml
+- include_tasks: sudoers.yml
+- include_tasks: pip-stuff.yml
