@@ -1,3 +1,13 @@
 ---
+- name: "check if go are installed"
+  command: "go version"
+  register: result
+  ignore_errors: true
+
+- name: "installing go"
+  command: "apt install -y golang"
+  when: result.rc != 0
+  become: true
+
 - name: "install Kerbrute"
   shell: go install github.com/ropnop/kerbrute@master

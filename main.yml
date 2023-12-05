@@ -5,7 +5,7 @@
   roles:
     - role: "roles/system-configs"
     - role: gantsign.visual-studio-code
-    - role: "roles/configure-fish"
+    - role: "roles/configure-bash"
     - role: "roles/kali-clean"
     - role: "roles/firefox-custom"
     - role: "roles/logging-ufw"
