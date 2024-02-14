@@ -2,7 +2,7 @@
 - name: "Copying .bashrc to home"
   copy:
     src: "{{ playbook_dir }}/roles/configure-bash/files/.bashrc"
-    dest: "{{ ansible_env.HOME }}/.bashrc"
+    dest: "~/.bashrc"
 - name: "Copying .bashrc Config to Root Directory"
   copy:
     src: "{{ playbook_dir }}/roles/configure-bash/files/.bashrcroot"

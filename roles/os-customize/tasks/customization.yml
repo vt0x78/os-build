@@ -1,0 +1,20 @@
+---
+- name: "Copying repo to /tmp"
+  command: "git clone https://github.com/xct/kali-clean.git"
+  args:
+    chdir: "/tmp"
+  become: true
+- name: "Installing Kali-Clean"
+  shell: |
+    cd /tmp/kali-clean
+    chmod +x install.sh
+    ./install.sh
+- name: "Copying config files to i3"
+  command: "cp clipboard_fix.sh config i3blocks.conf ~/.config/i3/"
+- name: "Installing PyWal"
+  command: "pip3 install pywal"
+  become: true 
+- name: "Setup a wallpaper"
+  command: "wal -i jin-woo.jpeg"
+  args:
+    chdir: "{{ playbook_dir }}/roles/os-customize/files/"   

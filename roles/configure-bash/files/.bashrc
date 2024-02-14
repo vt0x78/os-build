@@ -57,12 +57,10 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 command_not_found_handle() {
-  # Não faça nada para suprimir a mensagem de erro padrão
   return 127
 }
 
 cat ~/.cache/wal/sequences
-
 # The following block is surrounded by two delimiters.
 # These delimiters must not be modified. Thanks.
 # START KALI CONFIG VARIABLES
@@ -70,7 +68,7 @@ PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
 
-PS1='\[\033[38;2;102;0;102m\]\u\[\033[m\]☠️ \h \[\033[0;37m\]\w \[\033[0;37m\]~> \[\033[m\]'
+PS1='\[\033[38;2;136;137;184m\]\u\[\033[m\]☠️ \h \[\033[1;31m\]\w \[\033[0;37m\]~> \[\033[m\]'
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
@@ -133,3 +131,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
