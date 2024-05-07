@@ -8,7 +8,6 @@
     - role: gantsign.visual-studio-code
     - role: "roles/logging-ufw"
     - role: "roles/firefox-custom"
-    - role: "roles/os-customize"
     - role: "roles/configure-bash"
       users:
         - username: "{{ ansible_user_id }}"
