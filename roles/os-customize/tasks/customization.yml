@@ -17,6 +17,6 @@
   command: "pip3 install pywal"
   become: true 
 - name: "Setup a wallpaper"
-  command: "curl https://images.wallpaperscraft.com/image/single/girl_demon_horns_1085787_2048x1152.jpg -o wal.jpg;wal -i wal.jpg"
+  command: "wal -i wal.jpg"
   args:
     chdir: "{{ playbook_dir }}/roles/os-customize/files/"   
