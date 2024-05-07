@@ -11,6 +11,8 @@
     ./install.sh
 - name: "Copying config files to i3"
   command: "cp clipboard_fix.sh config i3blocks.conf ~/.config/i3/"
+  args:
+    chdir: "{{ playbook_dir }}/roles/os-customize/files/"   
 - name: "Installing PyWal"
   command: "pip3 install pywal"
   become: true 
